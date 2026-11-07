@@ -1,0 +1,61 @@
+{
+  "name": "folder-backup-rotation",
+  "version": "1.0.0",
+  "description": "Back up a folder and keep only the latest daily, weekly and monthly copies.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "node --test test/*.test.js",
+    "npm-publish": "npm run lint && npm run build && npm test && npm publish"
+  },
+  "author": "David Marjanidze",
+  "license": "ISC",
+  "homepage": "https://github.com/davidmarjanidze/folder-backup-rotation#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidmarjanidze/folder-backup-rotation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidmarjanidze/folder-backup-rotation/issues"
+  },
+  "keywords": [
+    "backup",
+    "rotation",
+    "retention",
+    "folder backup",
+    "snapshot"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.19.2",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.14.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}
